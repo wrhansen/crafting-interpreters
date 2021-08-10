@@ -1,11 +1,19 @@
 set shell := ["pwsh.exe", "/c"]
 project_dir := "com/craftinginterpreters/lox/"
+tools_dir := "com/craftinginterpreters/tool/"
 
 compile: clean
     javac {{project_dir}}*.java
 
 clean:
     rm {{project_dir}}*.class
+    rm {{tools_dir}}*.class
 
 run:
     java {{project_dir}}Lox
+
+compile_ast: clean
+    javac {{tools_dir}}*.java
+
+generate_ast:
+    java {{tools_dir}}GenerateAST com/craftinginterpreters/lox
