@@ -15,5 +15,5 @@ run:
 compile_ast: clean
     javac {{tools_dir}}*.java
 
-generate_ast:
+generate_ast: compile_ast
     java {{tools_dir}}GenerateAST com/craftinginterpreters/lox
