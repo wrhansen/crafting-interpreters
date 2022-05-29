@@ -3,7 +3,7 @@ project_dir := "com/craftinginterpreters/lox/"
 tools_dir := "com/craftinginterpreters/tool/"
 
 compile: clean
-    javac {{project_dir}}*.java
+    javac {{project_dir}}Lox.java
 
 clean:
     rm {{project_dir}}*.class
